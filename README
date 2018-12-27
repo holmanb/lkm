@@ -1,0 +1,17 @@
+kernel play
+===========
+
+*messing around with some loadable kernel modules (LKM)*
+
+Just trying to learn more about the internals of the linux kernel.  I expect lots of crash -n- burn, so 
+I will be using this project to help re-provision my systems when they die. 
+
+Resources:
+----------
+
+Primary Resource
+https://blog.sourcerer.io/writing-a-simple-linux-kernel-module-d9dc3762c234
+
+Very Dated (2.6) But Valuable Resource 
+http://tldp.org/LDP/lkmpg/2.6/html/index.html
+
