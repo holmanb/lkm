@@ -1,0 +1,2 @@
+#Rule for example_cdev driver
+KERNEL=="cdev", MODE="0666"

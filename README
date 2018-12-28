@@ -9,9 +9,16 @@ I will be using this project to help re-provision my systems when they die.
 Resources:
 ----------
 
-Primary Resource
+
+Very Dated (2.6) But Valuable 
+http://tldp.org/LDP/lkmpg/2.6/html/index.html
+
+A Short Character Device Blog Post
 https://blog.sourcerer.io/writing-a-simple-linux-kernel-module-d9dc3762c234
 
-Very Dated (2.6) But Valuable Resource 
-http://tldp.org/LDP/lkmpg/2.6/html/index.html
+Great Blog Post By Dr. Derek Molloy of Dublin City University, Ireland
+www.derekmolloy.ie/writing-a-linux-kernel-module-part-1-introduction
+
+Shows How to Register A Device Class and Driver of a Dynamically Allocated Major Number From Kernel Space
+www.derekmolloy.ie/writing-a-linux-kernel-module-part-2-a-character-device
 

@@ -1,16 +1,24 @@
-obj-m += lkm_example.o
+NAME=cdev
+UDEV=99-$(NAME).rules
+obj-m += $(NAME).o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
 clean:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
-	sudo rm /dev/lkm_example
+	sudo rmmod $(NAME)
+	sudo rm /etc/udev/rules.d/$(UDEV)	
+
+install: 
+	# order is important, on fedora 29 at least, rules aren't retroactively applied
+	sudo cp $(UDEV) /etc/udev/rules.d
+	sudo insmod $(NAME).ko
 
 test:
-	-sudo rmmod lkm_example.ko
+	-sudo rmmod $(NAME).ko
 	sudo dmesg -C
-	sudo insmod lkm_example.ko
+	sudo insmod $(NAME).ko
 	dmesg
-	sudo mknod /dev/lkm_example c $$(dmesg | awk '{print $$NF}') 0
-	echo "loaded module and created device file"
+	echo "loaded module [$(NAME)]  and created device file /dev/$(NAME)"
+
