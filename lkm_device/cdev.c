@@ -56,10 +56,16 @@ static ssize_t device_read(struct file *flip, char *buffer, size_t len, loff_t *
     return bytes_read;
 }
 
-/*read only*/
-static ssize_t device_write(struct file *flip, const char *buffer, size_t len, loff_t *offset) {
-    printk(KERN_ALERT DEVICE_NAME "This operation is not supported. \n");
-    return -EINVAL;
+static ssize_t device_write(struct file *file, const char *buffer, size_t len, loff_t *offset) {
+    //printk(KERN_ALERT DEVICE_NAME "device_write(%p,%s,%d)", file, buffer, len);
+    int bytes_written=0;
+    while(bytes_written<len && bytes_written<MSG_BUFFER_LEN){
+        get_user(msg_buffer[bytes_written], buffer+bytes_written); 
+	bytes_written++;
+    }
+    msg_buffer[bytes_written] = '\0';
+    
+    return bytes_written;
 }
 
 /*open*/
