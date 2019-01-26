@@ -16,6 +16,7 @@ install:
 	sudo insmod $(NAME).ko
 
 test:
+	sudo cp $(UDEV) /etc/udev/rules.d
 	-sudo rmmod $(NAME).ko
 	sudo dmesg -C
 	sudo insmod $(NAME).ko
