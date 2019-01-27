@@ -29,3 +29,5 @@ www.derekmolloy.ie/writing-a-linux-kernel-module-part-1-introduction
 Shows How to Register A Device Class and Driver of a Dynamically Allocated Major Number From Kernel Space
 www.derekmolloy.ie/writing-a-linux-kernel-module-part-2-a-character-device
 
+Shows How To Add Ioctl To Char Device
+https://www.tldp.org/LDP/lkmpg/2.4/html/x856.html
