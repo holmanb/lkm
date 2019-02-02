@@ -6,17 +6,29 @@ kernel play
 Just trying to learn more about the internals of the linux kernel.  I expect lots of crash -n- burn, so 
 I will be using this project to help re-provision my systems when they die. 
 
-REQUIREMENTS:
+Requirements
+-------------
 requires kernel headers installed (and reboot after) to build
 	
 	(FEDORA)
 	sudo dnf install kernel-devel
 	sudo reboot -h now
 
+
+Project Layout
+--------------
+hello_world/    - char device that can be loaded and unloaded (nothing more)
+lkm_device/	- char device that supports open/close/read/write operations
+lkm_ioctl/	- char device that supports ioctl operations (also reorganized the file structure)
+
+
+Usage
+-----
+every makefile provides the commands all/clean/test
+
+
 Resources:
 ----------
-
-
 Very Dated (2.6) But Valuable 
 http://tldp.org/LDP/lkmpg/2.6/html/index.html
 
