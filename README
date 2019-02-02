@@ -6,6 +6,7 @@ kernel play
 Just trying to learn more about the internals of the linux kernel.  I expect lots of crash -n- burn, so 
 I will be using this project to help re-provision my systems when they die. 
 
+
 Requirements
 -------------
 requires kernel headers installed (and reboot after) to build
