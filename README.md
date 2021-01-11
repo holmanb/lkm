@@ -5,18 +5,24 @@ kernel play
 
 
 
-### Install
-
-	
+### Dependencies
 
 **Fedora**
 
 ```
 sudo dnf install git gcc make kernel-devel
-git clone https://github.com/holmanb/lkm.git
-sudo reboot -h now
 ```
 
+**Arch**
+
+```
+sudo pacman -S git gcc make linux-headers
+```
+
+
+### Install
+
+git clone https://github.com/holmanb/lkm.git
 
 ### Usage
 
