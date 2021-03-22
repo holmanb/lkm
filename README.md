@@ -26,10 +26,31 @@ git clone https://github.com/holmanb/lkm.git
 
 ### Usage
 
-
 each directory contains a Makefile for running tests
 
 each Makefile implements `all`/`clean`/`test`
+
+to quickly test out modules in a VM, one can get up and running quickly with u-root + qemu + kvm
+
+
+#### Usage
+```
+# initial setup
+go get github.com/u-root/u-root
+
+cd <project directory>
+make all
+u-root -files <kernel_module>.ko  core boot
+qemu-system-x86_64 -kernel /boot/vmlinuz-$(uname -r) -initrd /tmp/initramfs.linux_amd64.cpio
+...
+<in vm>
+...
+insmod <kernel_module>.ko
+...
+<interact with module>
+...
+rmmod <kernel_module>.ko
+```
 
 
 ### Resources
@@ -39,7 +60,7 @@ Source of Truth
 https://github.com/torvalds/linux
 
 
-Very Dated (2.6) But Valuable 
+Very Dated (2.6) But Valuable
 
 http://tldp.org/LDP/lkmpg/2.6/html/index.html
 
